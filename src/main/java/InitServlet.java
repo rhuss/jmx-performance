@@ -15,7 +15,7 @@ public class InitServlet extends HttpServlet {
     public void init() throws ServletException {
         MBeanServer server = ManagementFactory.getPlatformMBeanServer();
         try {
-            server.registerMBean(new PerformanceTest(),new ObjectName("jolokia:type=performance,name=PerformanceTest"));
+            server.registerMBean(new PerformanceTest(),new ObjectName("jolokia:type=Performance,name=PerformanceTest"));
         } catch (InstanceAlreadyExistsException | MBeanRegistrationException | NotCompliantMBeanException | MalformedObjectNameException e) {
             throw new ServletException(e);
         }
